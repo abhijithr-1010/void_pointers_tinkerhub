@@ -11,6 +11,19 @@ dist-ssr/
 *.log
 npm-debug.log*
 
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+dist-ssr/
+
+# Logs
+*.log
+npm-debug.log*
+
 # Editor / OS
 .vscode/
 .idea/
@@ -23,4 +36,3 @@ Thumbs.db
 .env.*.local
 
 # Media assets (drop files locally, too large for git)
-src/assets/
