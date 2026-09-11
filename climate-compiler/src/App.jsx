@@ -11,7 +11,7 @@ import TransitionOverlay from './components/TransitionOverlay.jsx';
 import WeatherHUD from './components/WeatherHUD.jsx';
 import WeatherControls from './components/WeatherControls.jsx';
 import CodeEditor from './components/CodeEditor.jsx';
-import SnowOverlay from './components/SnowOverlay.jsx';
+import ParticleOverlay from './components/ParticleOverlay.jsx';
 import StormLetters from './components/StormLetters.jsx';
 import CompileButton from './components/CompileButton.jsx';
 import RoastPanel from './components/RoastPanel.jsx';
@@ -99,6 +99,9 @@ export default function App() {
     setRunPopup(popupRoast);
     setTimeout(() => setRunPopup(null), 6000); // Auto-dismiss after 6s
     
+    // Play effect sound for the popup
+    audioRef.current?.playEffect1();
+    
     setTimeout(() => setCompileResult(null), 10000);
   }, [climateId, logInsult]);
 
@@ -115,7 +118,7 @@ export default function App() {
       fontFamily: '"JetBrains Mono", monospace',
     }}>
       <VideoBackground climate={climate} />
-      <SnowOverlay active={climateId === 'snow'} />
+      <ParticleOverlay climateId={climateId} />
       <StormLetters active={climateId === 'storm'} audioRef={audioRef} />
       <TransitionOverlay climate={climate} transitionKey={transitionKey} />
       <AudioManager ref={audioRef} climate={climate} muted={muted} musicEnabled={musicEnabled} />
