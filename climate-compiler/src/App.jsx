@@ -16,8 +16,10 @@ import StormLetters from './components/StormLetters.jsx';
 import CompileButton from './components/CompileButton.jsx';
 import RoastPanel from './components/RoastPanel.jsx';
 import ArgueBox from './components/ArgueBox.jsx';
+import StartGate from './components/StartGate.jsx';
 
 export default function App() {
+  const [started, setStarted] = useState(false);
   const [climateId, setClimateId] = useState('rain');
   const [weatherData, setWeatherData] = useState(null);
   const [transitionKey, setTransitionKey] = useState(0);
@@ -93,6 +95,10 @@ export default function App() {
     setTimeout(() => setCompileResult(null), 10000);
   }, [climateId, logInsult]);
 
+  if (!started) {
+    return <StartGate onStart={() => setStarted(true)} />;
+  }
+
   return (
     <div style={{
       '--accent': climate.palette.accent, '--text': climate.palette.text, '--bg': climate.palette.bg,
@@ -103,20 +109,20 @@ export default function App() {
     }}>
       <VideoBackground climate={climate} />
       <SnowOverlay active={climateId === 'snow'} />
-      <StormLetters active={climateId === 'storm'} audioRef={audioRef} intensity={chaosLevel} />
+      <StormLetters active={climateId === 'storm'} audioRef={audioRef} />
       <TransitionOverlay climate={climate} transitionKey={transitionKey} />
       <AudioManager ref={audioRef} climate={climate} muted={muted} musicEnabled={musicEnabled} />
 
-      <div className="relative z-10 flex flex-col h-screen p-4 gap-3 overflow-hidden">
+      <div className="relative z-10 flex flex-col h-screen p-5 gap-4 overflow-hidden">
         {/* Top bar */}
-        <div className="flex items-center justify-between gap-3 flex-shrink-0">
-          <div className="flex items-center gap-3">
-            <span className="text-lg font-bold tracking-widest"
+        <div className="flex items-center justify-between gap-4 flex-shrink-0 bg-black/20 p-4 rounded-xl shadow-md border border-white/5 backdrop-blur-sm">
+          <div className="flex items-center gap-4">
+            <span className="text-xl font-bold tracking-widest font-sans"
               style={{ color: climate.palette.accent, textShadow: `0 0 12px ${climate.palette.glowColor}` }}>
               ⚡ CLIMATE COMPILER
             </span>
-            <span className="text-xs px-2 py-0.5 rounded border font-mono opacity-60"
-              style={{ borderColor: climate.palette.border }}>
+            <span className="text-xs px-3 py-1 rounded-md border font-sans font-semibold opacity-80"
+              style={{ borderColor: climate.palette.border, backgroundColor: climate.palette.buttonBg }}>
               v1.0 · FAKE
             </span>
           </div>

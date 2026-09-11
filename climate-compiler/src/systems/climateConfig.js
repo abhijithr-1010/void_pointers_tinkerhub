@@ -6,6 +6,24 @@
 
 export const CLIMATES = ['rain', 'sunshine', 'snow', 'storm'];
 
+import rainAmbient from '../assets/audio/rain/ambient.mp3';
+import rainEffect1 from '../assets/audio/rain/effect1.mp3';
+import rainMusic from '../assets/audio/rain/music.mp3';
+import sunshineAmbient from '../assets/audio/sunshine/ambient.mp3';
+import sunshineEffect1 from '../assets/audio/sunshine/effect1.mp3';
+import sunshineMusic from '../assets/audio/sunshine/music.mp3';
+import snowAmbient from '../assets/audio/snow/ambient.mp3';
+import snowEffect1 from '../assets/audio/snow/effect1.mp3';
+import snowMusic from '../assets/audio/snow/music.mp3';
+import stormAmbient from '../assets/audio/storm/ambient.mp3';
+import stormEffect1 from '../assets/audio/storm/effect1.mp3';
+import stormMusic from '../assets/audio/storm/music.mp3';
+
+import rainVideo from '../assets/video/rain/background.mp4';
+import sunshineVideo from '../assets/video/sunshine/background.mp4';
+import snowVideo from '../assets/video/snow/background.mp4';
+import stormVideo from '../assets/video/storm/background.mp4';
+
 export const climateConfig = {
   rain: {
     id: 'rain',
@@ -27,11 +45,11 @@ export const climateConfig = {
     textAnimation: 'drift',
     letterPhysics: 'float',
     audio: {
-      ambient: '/audio/rain/ambient.mp3',
-      effect1: '/audio/rain/effect1.mp3',
-      music: '/audio/rain/music.mp3',
+      ambient: rainAmbient,
+      effect1: rainEffect1,
+      music: rainMusic,
     },
-    video: '/video/rain/background.mp4',
+    video: rainVideo,
     compileStyle: 'drip',
     intensity: 'melancholic',
     roastBank: [
@@ -101,11 +119,11 @@ export const climateConfig = {
     textAnimation: 'sharp',
     letterPhysics: 'crisp',
     audio: {
-      ambient: '/audio/sunshine/ambient.mp3',
-      effect1: '/audio/sunshine/effect1.mp3',
-      music: '/audio/sunshine/music.mp3',
+      ambient: sunshineAmbient,
+      effect1: sunshineEffect1,
+      music: sunshineMusic,
     },
-    video: '/video/sunshine/background.mp4',
+    video: sunshineVideo,
     compileStyle: 'sunbeam',
     intensity: 'sarcastic',
     roastBank: [
@@ -175,11 +193,11 @@ export const climateConfig = {
     textAnimation: 'freeze',
     letterPhysics: 'crystallize',
     audio: {
-      ambient: '/audio/snow/ambient.mp3',
-      effect1: '/audio/snow/effect1.mp3',
-      music: '/audio/snow/music.mp3',
+      ambient: snowAmbient,
+      effect1: snowEffect1,
+      music: snowMusic,
     },
-    video: '/video/snow/background.mp4',
+    video: snowVideo,
     compileStyle: 'freeze',
     intensity: 'melancholic',
     roastBank: [
@@ -249,11 +267,11 @@ export const climateConfig = {
     textAnimation: 'chaos',
     letterPhysics: 'scatter',
     audio: {
-      ambient: '/audio/storm/ambient.mp3',
-      effect1: '/audio/storm/effect1.mp3',
-      music: '/audio/storm/music.mp3',
+      ambient: stormAmbient,
+      effect1: stormEffect1,
+      music: stormMusic,
     },
-    video: '/video/storm/background.mp4',
+    video: stormVideo,
     compileStyle: 'glitch',
     intensity: 'aggressive',
     roastBank: [

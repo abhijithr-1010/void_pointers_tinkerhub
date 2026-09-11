@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         mono: ['"JetBrains Mono"', '"Fira Code"', 'Consolas', 'monospace'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'sans-serif'],
       },
       animation: {
         'drift': 'drift 8s ease-in-out infinite',

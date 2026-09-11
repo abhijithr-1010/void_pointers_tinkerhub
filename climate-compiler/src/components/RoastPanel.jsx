@@ -6,11 +6,17 @@ export default function RoastPanel({ climate, currentRoast, compileResult, insul
   const [showHistory, setShowHistory] = useState(false);
   const filtered = filterClimate === 'all' ? insultHistory : insultHistory.filter((h) => h.climateId === filterClimate);
 
+  let animClass = 'animate-slide-in';
+  if (climate.id === 'rain') animClass = 'animate-[slideIn_0.8s_cubic-bezier(0.4,0,0.2,1)]';
+  if (climate.id === 'storm') animClass = 'animate-[glitch_0.3s_steps(2)_3]';
+  if (climate.id === 'snow') animClass = 'animate-fade-in duration-1000';
+  if (climate.id === 'sunshine') animClass = 'animate-[pulseGlow_1s_ease-out]';
+
   return (
-    <div className="rounded-lg border p-4 flex flex-col gap-3"
-      style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border, color: climate.palette.text, backdropFilter: 'blur(8px)' }}>
+    <div className="rounded-xl border p-5 flex flex-col gap-3 shadow-xl relative overflow-hidden"
+      style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border, color: climate.palette.text, backdropFilter: 'blur(12px)' }}>
       {currentRoast && (
-        <div className="p-3 rounded-md border-l-4 text-sm font-mono italic animate-slide-in"
+        <div className={`p-4 rounded-lg border-l-4 text-sm font-mono italic shadow-inner ${animClass}`}
           style={{ borderColor: climate.palette.accent, backgroundColor: climate.palette.editorBg }}>
           <span style={{ color: climate.palette.accent }}>{climate.emoji} </span>{currentRoast}
         </div>
