@@ -29,10 +29,10 @@ export default function CompileButton({ climate, onCompileComplete }) {
   return (
     <div className="flex flex-col gap-2">
       <button onClick={handleCompile} disabled={compiling}
-        className={`px-6 py-3 rounded-xl font-sans font-bold uppercase tracking-wider text-sm border-b-4 transition-all duration-300 disabled:opacity-60 ${compiling ? '' : 'hover:scale-[1.02] active:border-b-0 active:translate-y-1'}`}
+        className={`px-6 py-3 rounded-xl font-sans font-bold uppercase tracking-wider text-sm border-b-4 transition-all duration-300 disabled:opacity-60 backdrop-blur-md ${compiling ? '' : 'hover:scale-[1.02] active:border-b-0 active:translate-y-1'}`}
         style={{ 
-          backgroundColor: compiling ? climate.palette.border : climate.palette.accent, 
-          color: climate.palette.bg, 
+          backgroundColor: compiling ? climate.palette.border : climate.palette.buttonBg, 
+          color: climate.palette.text, 
           borderColor: compiling ? climate.palette.bg : climate.palette.border, 
           boxShadow: compiling ? 'none' : `0 8px 24px ${climate.palette.glowColor}` 
         }}>

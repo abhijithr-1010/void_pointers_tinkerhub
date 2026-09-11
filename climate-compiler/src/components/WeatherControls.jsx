@@ -15,7 +15,7 @@ export default function WeatherControls({ currentClimate, onSwitch, muted, music
         const active = id === currentClimate.id;
         return (
           <button key={id} onClick={() => onSwitch(id)}
-            className="px-3 py-1.5 rounded-md text-xs font-mono font-semibold border transition-all duration-200"
+            className="px-3 py-1.5 rounded-md text-xs font-mono font-semibold border transition-all duration-200 backdrop-blur-md"
             style={{
               backgroundColor: active ? cfg.palette.accent : cfg.palette.buttonBg,
               color: active ? cfg.palette.bg : cfg.palette.text,
@@ -28,16 +28,19 @@ export default function WeatherControls({ currentClimate, onSwitch, muted, music
         );
       })}
       <button onClick={handleSurprise}
-        className="px-3 py-1.5 rounded-md text-xs font-mono font-semibold border border-gray-600 text-gray-300 bg-gray-900 hover:bg-gray-700 transition-all duration-200">
+        className="px-3 py-1.5 rounded-md text-xs font-mono font-semibold border transition-all duration-200 backdrop-blur-md opacity-80 hover:opacity-100"
+        style={{ backgroundColor: currentClimate.palette.buttonBg, borderColor: currentClimate.palette.border, color: currentClimate.palette.text }}>
         🎲 Surprise Me
       </button>
       <div className="ml-auto flex gap-2">
         <button onClick={onToggleMute}
-          className="px-3 py-1.5 rounded-md text-xs font-mono border border-gray-700 text-gray-400 bg-gray-900 hover:bg-gray-800 transition-all">
+          className="px-3 py-1.5 rounded-md text-xs font-mono border transition-all backdrop-blur-md opacity-80 hover:opacity-100"
+          style={{ backgroundColor: currentClimate.palette.buttonBg, borderColor: currentClimate.palette.border, color: currentClimate.palette.text }}>
           {muted ? '🔇' : '🔊'} {muted ? 'Unmute' : 'Mute'}
         </button>
         <button onClick={onToggleMusic}
-          className="px-3 py-1.5 rounded-md text-xs font-mono border border-gray-700 text-gray-400 bg-gray-900 hover:bg-gray-800 transition-all">
+          className="px-3 py-1.5 rounded-md text-xs font-mono border transition-all backdrop-blur-md opacity-80 hover:opacity-100"
+          style={{ backgroundColor: currentClimate.palette.buttonBg, borderColor: currentClimate.palette.border, color: currentClimate.palette.text }}>
           {musicEnabled ? '🎵' : '🚫'} Music
         </button>
       </div>

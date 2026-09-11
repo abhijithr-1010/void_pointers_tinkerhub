@@ -27,9 +27,9 @@ export default function ArgueBox({ climate, onPunishment, onLogInsult }) {
   };
 
   return (
-    <div className="rounded-lg border flex flex-col"
+    <div className="rounded-lg border flex flex-col backdrop-blur-md shadow-lg"
       style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border, color: climate.palette.text, height: '200px' }}>
-      <div className="px-3 py-1.5 border-b text-xs font-mono font-semibold opacity-60" style={{ borderColor: climate.palette.border }}>
+      <div className="px-3 py-1.5 border-b text-xs font-mono font-semibold opacity-80" style={{ borderColor: climate.palette.border }}>
         💬 Argue with the compiler (you will lose)
       </div>
       <div className="flex-1 overflow-y-auto px-3 py-2 flex flex-col gap-1.5">

@@ -79,9 +79,9 @@ export default function CodeEditor({ climate, onKeystroke, slowInput, chaosLevel
 
   return (
     <div className={`flex rounded-xl overflow-hidden border text-xs font-mono flex-1 shadow-lg transition-transform ${climate.id === 'storm' && chaosLevel > 3 ? 'animate-glitch' : ''}`}
-      style={{ backgroundColor: climate.palette.editorBg, borderColor: climate.palette.border, minHeight: '320px', boxShadow: `inset 0 0 20px rgba(0,0,0,0.5), 0 8px 32px ${climate.palette.bg}` }}>
+      style={{ backgroundColor: climate.palette.editorBg, borderColor: climate.palette.border, minHeight: '320px', boxShadow: `inset 0 0 20px rgba(0,0,0,0.5), 0 8px 32px ${climate.palette.bg}`, backdropFilter: 'blur(10px)' }}>
       <div className="flex flex-col items-end px-4 pt-4 select-none border-r z-20"
-        style={{ backgroundColor: 'rgba(0,0,0,0.2)', borderColor: climate.palette.border, color: climate.palette.border, minWidth: '3.5rem' }}>
+        style={{ backgroundColor: 'rgba(0,0,0,0.2)', borderColor: climate.palette.border, color: climate.palette.border, minWidth: '3.5rem', backdropFilter: 'blur(8px)' }}>
         {lines.map((_, i) => <div key={i} className="leading-5">{i + 1}</div>)}
       </div>
       <div className="relative flex-1 overflow-hidden bg-gradient-to-br" style={{ backgroundImage: `linear-gradient(to bottom right, transparent, rgba(0,0,0,0.3))` }}>

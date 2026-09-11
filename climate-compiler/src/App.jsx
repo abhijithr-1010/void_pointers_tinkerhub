@@ -102,8 +102,8 @@ export default function App() {
   return (
     <div style={{
       '--accent': climate.palette.accent, '--text': climate.palette.text, '--bg': climate.palette.bg,
-      '--glow': climate.palette.glowColor, transition: 'background-color 0.8s ease, color 0.6s ease',
-      backgroundColor: climate.palette.bg, color: climate.palette.text,
+      '--glow': climate.palette.glowColor, transition: 'color 0.6s ease',
+      backgroundColor: 'transparent', color: climate.palette.text,
       width: '100vw', height: '100vh', overflow: 'hidden', position: 'relative',
       fontFamily: '"JetBrains Mono", monospace',
     }}>
@@ -152,7 +152,7 @@ export default function App() {
           <div className="flex flex-col gap-3 w-72 flex-shrink-0 overflow-y-auto">
             <RoastPanel climate={climate} currentRoast={currentRoast} compileResult={compileResult} insultHistory={insultHistory} />
             <ArgueBox climate={climate} onPunishment={handlePunishment} onLogInsult={logInsult} />
-            <div className="rounded-lg border p-3 text-xs font-mono opacity-60 flex flex-col gap-1"
+            <div className="rounded-lg border p-3 text-xs font-mono opacity-80 flex flex-col gap-1 backdrop-blur-md shadow-lg"
               style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border }}>
               <div>🌪 Chaos Level: {chaosLevel}/10</div>
               <div>💬 Insults delivered: {insultHistory.length}</div>
