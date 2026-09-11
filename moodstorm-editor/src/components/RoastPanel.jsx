@@ -1,0 +1,102 @@
+// RoastPanel.jsx — live roast display + insult history log with climate filter
+import React, { useState } from 'react';
+import { CLIMATES, climateConfig } from '../systems/climateConfig.js';
+
+export default function RoastPanel({ climate, currentRoast, compileResult, insultHistory }) {
+  const [filterClimate, setFilterClimate] = useState('all');
+  const [showHistory, setShowHistory] = useState(false);
+
+  const filtered = filterClimate === 'all'
+    ? insultHistory
+    : insultHistory.filter((h) => h.climateId === filterClimate);
+
+  return (
+    <div
+      className="rounded-lg border p-4 flex flex-col gap-3"
+      style={{
+        backgroundColor: climate.palette.panelBg,
+        borderColor: climate.palette.border,
+        color: climate.palette.text,
+        backdropFilter: 'blur(8px)',
+      }}
+    >
+      {/* Live roast */}
+      {currentRoast && (
+        <div
+          className="p-3 rounded-md border-l-4 text-sm font-mono italic animate-slide-in"
+          style={{ borderColor: climate.palette.accent, backgroundColor: climate.palette.editorBg }}
+        >
+          <span style={{ color: climate.palette.accent }}>{climate.emoji} </span>
+          {currentRoast}
+        </div>
+      )}
+
+      {/* Compile result */}
+      {compileResult && (
+        <div
+          className="p-3 rounded-md text-sm font-mono animate-slide-in"
+          style={{
+            backgroundColor: compileResult.type === 'success'
+              ? `${climate.palette.accent}22`
+              : '#3a000022',
+            borderLeft: `4px solid ${compileResult.type === 'success' ? climate.palette.accent : '#ef4444'}`,
+            color: compileResult.type === 'success' ? climate.palette.accent : '#ef4444',
+          }}
+        >
+          <span className="font-bold">{compileResult.type === 'success' ? '✓ BUILD:' : '✗ ERROR:'} </span>
+          {compileResult.message}
+        </div>
+      )}
+
+      {/* History toggle */}
+      <button
+        className="text-xs font-mono opacity-60 hover:opacity-100 text-left transition-opacity"
+        onClick={() => setShowHistory((s) => !s)}
+        style={{ color: climate.palette.accent }}
+      >
+        {showHistory ? '▾' : '▸'} Insult History ({insultHistory.length})
+      </button>
+
+      {showHistory && (
+        <div className="flex flex-col gap-2 max-h-48 overflow-y-auto">
+          {/* Climate filter tabs */}
+          <div className="flex flex-wrap gap-1">
+            <button
+              onClick={() => setFilterClimate('all')}
+              className={`px-2 py-0.5 rounded text-xs font-mono border transition-all ${filterClimate === 'all' ? 'opacity-100' : 'opacity-40'}`}
+              style={{ borderColor: climate.palette.border, color: climate.palette.text }}
+            >
+              All
+            </button>
+            {CLIMATES.map((id) => (
+              <button
+                key={id}
+                onClick={() => setFilterClimate(id)}
+                className={`px-2 py-0.5 rounded text-xs font-mono border transition-all ${filterClimate === id ? 'opacity-100' : 'opacity-40'}`}
+                style={{ borderColor: climateConfig[id].palette.border, color: climateConfig[id].palette.text }}
+              >
+                {climateConfig[id].emoji}
+              </button>
+            ))}
+          </div>
+
+          {filtered.length === 0 ? (
+            <p className="text-xs opacity-40 italic">No insults yet. Try harder.</p>
+          ) : (
+            filtered.slice().reverse().map((entry, i) => (
+              <div
+                key={i}
+                className="text-xs font-mono px-2 py-1 rounded border-l-2 opacity-80"
+                style={{ borderColor: climateConfig[entry.climateId]?.palette.accent, color: climate.palette.text }}
+              >
+                <span className="opacity-50 mr-2">{climateConfig[entry.climateId]?.emoji}</span>
+                {entry.message}
+                {entry.source && <span className="opacity-30 ml-2">({entry.source})</span>}
+              </div>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  );
+}

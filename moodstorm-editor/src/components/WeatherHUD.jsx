@@ -1,0 +1,55 @@
+// WeatherHUD.jsx — city name, temp, current climate, next forecast badge
+import React from 'react';
+import { climateConfig } from '../systems/climateConfig.js';
+
+export default function WeatherHUD({ climate, weatherData, nextClimate }) {
+  const next = climateConfig[nextClimate];
+
+  return (
+    <div
+      className="flex items-center gap-4 px-4 py-2 rounded-lg text-xs font-mono backdrop-blur-sm border"
+      style={{
+        backgroundColor: climate.palette.hudBg,
+        borderColor: climate.palette.border,
+        color: climate.palette.text,
+        '--glow-color': climate.palette.glowColor,
+      }}
+    >
+      {/* Climate icon + label */}
+      <span className="text-lg">{climate.emoji}</span>
+      <div className="flex flex-col">
+        <span className="font-semibold" style={{ color: climate.palette.accent }}>
+          {climate.label}
+        </span>
+        {weatherData?.city && (
+          <span className="opacity-70">{weatherData.city.name}, {weatherData.city.country}</span>
+        )}
+      </div>
+
+      {/* Temperature */}
+      {weatherData?.temp != null && (
+        <div className="flex flex-col items-center px-3 border-l border-r" style={{ borderColor: climate.palette.border }}>
+          <span className="text-base font-bold" style={{ color: climate.palette.accent }}>
+            {weatherData.temp}°C
+          </span>
+          <span className="opacity-60">{weatherData.description}</span>
+        </div>
+      )}
+      {weatherData?.source === 'fallback' && (
+        <div className="flex flex-col px-3 border-l border-r" style={{ borderColor: climate.palette.border }}>
+          <span className="opacity-60">Offline Mode</span>
+          <span className="opacity-40">Local forecast</span>
+        </div>
+      )}
+
+      {/* Next forecast */}
+      {next && (
+        <div className="flex items-center gap-1 opacity-70">
+          <span>→</span>
+          <span>{next.emoji}</span>
+          <span>{next.label} incoming</span>
+        </div>
+      )}
+    </div>
+  );
+}
