@@ -36,7 +36,7 @@ export default function CompileButton({ climate, onCompileComplete }) {
           borderColor: compiling ? climate.palette.bg : climate.palette.border, 
           boxShadow: compiling ? 'none' : `0 8px 24px ${climate.palette.glowColor}` 
         }}>
-        {compiling ? `⏳ ${climate.emoji} Compiling...` : `▶ Run (${climate.label} Mode)`}
+        {compiling ? `⏳ ${climate.emoji} കമ്പൈൽ ചെയ്യുന്നു...` : `▶ റൺ ചെയ്യുക (${climate.label} മോഡ്)`}
       </button>
       {compiling && (
         <div className="w-full rounded-full overflow-hidden h-2 border" style={{ borderColor: climate.palette.border, backgroundColor: climate.palette.editorBg }}>

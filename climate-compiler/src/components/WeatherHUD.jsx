@@ -20,13 +20,13 @@ export default function WeatherHUD({ climate, weatherData, nextClimate }) {
         </div>
       )}
       {weatherData?.source === 'fallback' && (
-        <div className="flex flex-col px-3 border-l border-r opacity-60" style={{ borderColor: climate.palette.border }}>
-          <span>Offline Mode</span>
+        <div className="flex flex-col px-3 border-l border-r opacity-60 font-sans" style={{ borderColor: climate.palette.border }}>
+          <span>ഓഫ്‌ലൈൻ മോഡ് (Offline)</span>
         </div>
       )}
       {next && (
-        <div className="flex items-center gap-1 opacity-70">
-          <span>→ {next.emoji} {next.label} incoming</span>
+        <div className="flex items-center gap-1 opacity-70 font-sans">
+          <span>→ വരുന്നു: {next.emoji} {next.label}</span>
         </div>
       )}
     </div>

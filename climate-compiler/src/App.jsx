@@ -25,7 +25,6 @@ export default function App() {
   const [transitionKey, setTransitionKey] = useState(0);
   const [nextClimateId, setNextClimateId] = useState('sunshine');
   const [muted, setMuted] = useState(false);
-  const [musicEnabled, setMusicEnabled] = useState(true);
   const audioRef = useRef(null);
   const [slowInput, setSlowInput] = useState(false);
   const [chaosLevel, setChaosLevel] = useState(1);
@@ -121,7 +120,7 @@ export default function App() {
       <ParticleOverlay climateId={climateId} />
       <StormLetters active={climateId === 'storm'} audioRef={audioRef} />
       <TransitionOverlay climate={climate} transitionKey={transitionKey} />
-      <AudioManager ref={audioRef} climate={climate} muted={muted} musicEnabled={musicEnabled} />
+      <AudioManager ref={audioRef} climate={climate} muted={muted} />
 
       <div className="relative z-10 flex flex-col h-screen p-5 gap-4 overflow-hidden">
         {/* Top bar */}
@@ -129,11 +128,11 @@ export default function App() {
           <div className="flex items-center gap-4">
             <span className="text-xl font-bold tracking-widest font-sans"
               style={{ color: climate.palette.accent, textShadow: `0 0 12px ${climate.palette.glowColor}` }}>
-              ⚡ CLIMATE COMPILER
+              ⚡ ക്ലൈമറ്റ് കമ്പൈലർ (Climate Compiler)
             </span>
             <span className="text-xs px-3 py-1 rounded-md border font-sans font-semibold opacity-80"
               style={{ borderColor: climate.palette.border, backgroundColor: climate.palette.buttonBg }}>
-              v1.0 · FAKE
+              v1.0 · വെറും തള്ള്
             </span>
           </div>
           <WeatherHUD climate={climate} weatherData={weatherData} nextClimate={nextClimateId} />
@@ -142,8 +141,7 @@ export default function App() {
         {/* Controls */}
         <div className="flex-shrink-0">
           <WeatherControls currentClimate={climate} onSwitch={(id) => switchClimate(id, true)}
-            muted={muted} musicEnabled={musicEnabled}
-            onToggleMute={() => setMuted((m) => !m)} onToggleMusic={() => setMusicEnabled((e) => !e)} />
+            muted={muted} onToggleMute={() => setMuted((m) => !m)} />
         </div>
 
         {/* Editor + sidebar */}
@@ -153,7 +151,7 @@ export default function App() {
               style={{ backgroundColor: climate.palette.editorBg, borderColor: climate.palette.border, color: climate.palette.text }}>
               <span style={{ color: climate.palette.accent }}>●</span>
               <span>untitled_disaster.js</span>
-              <span className="ml-auto opacity-40">{climate.emoji} {climate.label} Mode</span>
+              <span className="ml-auto opacity-40">{climate.emoji} {climate.label} മോഡ്</span>
             </div>
             <CodeEditor climate={climate} onKeystroke={recordKeystroke} slowInput={slowInput} chaosLevel={chaosLevel} />
             <CompileButton climate={climate} onCompileComplete={handleCompileComplete} />
@@ -164,10 +162,10 @@ export default function App() {
             <ArgueBox climate={climate} onPunishment={handlePunishment} onLogInsult={logInsult} />
             <div className="rounded-lg border p-3 text-xs font-mono opacity-80 flex flex-col gap-1 backdrop-blur-md shadow-lg"
               style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border }}>
-              <div>🌪 Chaos Level: {chaosLevel}/10</div>
-              <div>💬 Insults delivered: {insultHistory.length}</div>
-              <div>🎭 Current mood: {intensity}</div>
-              <div>⌨ Input: {slowInput ? '🐌 Throttled' : '✓ Normal'}</div>
+              <div>🌪 അലമ്പ് ലെവൽ (Chaos): {chaosLevel}/10</div>
+              <div>💬 കൊടുത്ത പണികൾ: {insultHistory.length}</div>
+              <div>🎭 ഇപ്പോഴത്തെ മൂഡ്: {intensity}</div>
+              <div>⌨ ടൈപ്പിംഗ്: {slowInput ? '🐌 ശോകം (Throttled)' : '✓ സെറ്റ് (Normal)'}</div>
             </div>
           </div>
         </div>
@@ -180,7 +178,7 @@ export default function App() {
                style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border }}>
             <div className="flex justify-between items-center border-b pb-2" style={{ borderColor: climate.palette.border }}>
               <span className="font-bold text-lg font-sans tracking-wide" style={{ color: climate.palette.accent, textShadow: `0 0 8px ${climate.palette.glowColor}` }}>
-                {climate.emoji} BUILD OUTPUT
+                {climate.emoji} കമ്പൈൽ റിസൾട്ട്
               </span>
               <button onClick={() => setRunPopup(null)} className="opacity-60 hover:opacity-100 font-mono text-2xl leading-none" style={{ color: climate.palette.text }}>
                 ×
@@ -192,7 +190,7 @@ export default function App() {
             <button onClick={() => setRunPopup(null)}
                className="mt-2 py-2 rounded-md font-sans font-bold uppercase text-sm border transition-all hover:scale-[1.02] active:scale-95"
                style={{ backgroundColor: climate.palette.buttonBg, borderColor: climate.palette.accent, color: climate.palette.accent, boxShadow: `0 0 12px ${climate.palette.glowColor}` }}>
-              Acknowledge Failure
+              തെറ്റ് സമ്മതിക്കുക (Accept Defeat)
             </button>
           </div>
         </div>

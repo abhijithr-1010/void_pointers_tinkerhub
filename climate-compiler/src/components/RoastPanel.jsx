@@ -27,16 +27,16 @@ export default function RoastPanel({ climate, currentRoast, compileResult, insul
           <span className="font-bold">{compileResult.type === 'success' ? '✓ BUILD:' : '✗ ERROR:'} </span>{compileResult.message}
         </div>
       )}
-      <button className="text-xs font-mono opacity-60 hover:opacity-100 text-left transition-opacity"
+      <button className="text-xs font-sans font-bold opacity-60 hover:opacity-100 text-left transition-opacity"
         onClick={() => setShowHistory((s) => !s)} style={{ color: climate.palette.accent }}>
-        {showHistory ? '▾' : '▸'} Insult History ({insultHistory.length})
+        {showHistory ? '▾' : '▸'} തള്ളൽ ഹിസ്റ്ററി (History) ({insultHistory.length})
       </button>
       {showHistory && (
         <div className="flex flex-col gap-2 max-h-48 overflow-y-auto">
           <div className="flex flex-wrap gap-1">
             <button onClick={() => setFilterClimate('all')}
-              className={`px-2 py-0.5 rounded text-xs font-mono border transition-all ${filterClimate === 'all' ? 'opacity-100' : 'opacity-40'}`}
-              style={{ borderColor: climate.palette.border, color: climate.palette.text }}>All</button>
+              className={`px-2 py-0.5 rounded text-xs font-sans font-bold border transition-all ${filterClimate === 'all' ? 'opacity-100' : 'opacity-40'}`}
+              style={{ borderColor: climate.palette.border, color: climate.palette.text }}>എല്ലാം (All)</button>
             {CLIMATES.map((id) => (
               <button key={id} onClick={() => setFilterClimate(id)}
                 className={`px-2 py-0.5 rounded text-xs font-mono border transition-all ${filterClimate === id ? 'opacity-100' : 'opacity-40'}`}
@@ -46,7 +46,7 @@ export default function RoastPanel({ climate, currentRoast, compileResult, insul
             ))}
           </div>
           {filtered.length === 0
-            ? <p className="text-xs opacity-40 italic">No insults yet. Try harder.</p>
+            ? <p className="text-xs opacity-40 italic font-sans">ഇതുവരെ ആരും തള്ളിയിട്ടില്ല. ഒന്ന് ശ്രമിച്ച് നോക്ക്.</p>
             : filtered.slice().reverse().map((entry, i) => (
               <div key={i} className="text-xs font-mono px-2 py-1 rounded border-l-2 opacity-80"
                 style={{ borderColor: climateConfig[entry.climateId]?.palette.accent, color: climate.palette.text }}>

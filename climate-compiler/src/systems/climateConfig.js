@@ -8,16 +8,12 @@ export const CLIMATES = ['rain', 'sunshine', 'snow', 'storm'];
 
 import rainAmbient from '../assets/audio/rain/ambient.mp3';
 import rainEffect1 from '../assets/audio/rain/effect1.mp3';
-import rainMusic from '../assets/audio/rain/music.mp3';
 import sunshineAmbient from '../assets/audio/sunshine/ambient.mp3';
 import sunshineEffect1 from '../assets/audio/sunshine/effect1.mp3';
-import sunshineMusic from '../assets/audio/sunshine/music.mp3';
 import snowAmbient from '../assets/audio/snow/ambient.mp3';
 import snowEffect1 from '../assets/audio/snow/effect1.mp3';
-import snowMusic from '../assets/audio/snow/music.mp3';
 import stormAmbient from '../assets/audio/storm/ambient.mp3';
 import stormEffect1 from '../assets/audio/storm/effect1.mp3';
-import stormMusic from '../assets/audio/storm/music.mp3';
 
 import rainVideo from '../assets/video/rain/background.mp4';
 import sunshineVideo from '../assets/video/sunshine/background.mp4';
@@ -27,7 +23,7 @@ import stormVideo from '../assets/video/storm/background.mp4';
 export const climateConfig = {
   rain: {
     id: 'rain',
-    label: 'Rain',
+    label: 'മഴ (Rain)',
     emoji: '🌧️',
     palette: {
       bg: 'rgba(5, 5, 16, 0.4)',
@@ -47,60 +43,59 @@ export const climateConfig = {
     audio: {
       ambient: rainAmbient,
       effect1: rainEffect1,
-      music: rainMusic,
     },
     video: rainVideo,
     compileStyle: 'drip',
     intensity: 'melancholic',
     roastBank: [
-      "I see you named your variable 'temp'. It won't fill the void in your heart.",
-      "Another console.log('here'). Still lost, aren't you?",
-      "You didn't save the file before running. It's fine. Nothing matters anyway.",
-      "Undefined is not a function. Much like your attempts at debugging.",
-      "Stack Overflow is down. You're completely alone now.",
-      "I've seen better logic in a junior dev's first PR.",
-      "Copy-pasting from ChatGPT won't save you this time.",
-      "Your 'fix' just broke three other components. Typical.",
-      "Line 42: Expected a semicolon. Found only disappointment.",
-      "Why did you write a 50-line switch statement? Who hurt you?",
-      "Ah, the classic 'it works on my machine'. Too bad I'm not your machine.",
-      "Pushing directly to main at 3 AM. A silent cry for help.",
-      "You commented out the failing test. I saw that.",
-      "Merge conflict in package-lock.json. Just give up for the day.",
-      "Your code weeps. So do I."
+      "എന്തിനാ ബ്രോ കോഡ് എഴുതുന്നത്? ചുമ്മാ കരയാൻ വേണ്ടി മാത്രം... 😭",
+      "ആ 'temp' വേരിയബിൾ വെച്ച് നിന്റെ ജീവിതം എങ്കിലും രക്ഷപ്പെടുമോ? 💔",
+      "ഒരു കൺസോൾ ലോഗ് (console.log) കൂടി ഇട്ടാൽ എല്ലാം ശരിയാകുമെന്ന് തോന്നുന്നുണ്ടോ? പാവം... 🌧️",
+      "സേവ് ചെയ്യാൻ പോലും മറന്നു... ഈ കോഡും നിന്റെ ജീവിതവും ഒരുപോലെയാണ്, ശോകം. ☔",
+      "സ്റ്റാക്ക് ഓവർഫ്ലോ (Stack Overflow) പോലും നിന്നെ കൈവിട്ടു. ഇനി നീ ഒറ്റയ്ക്കാണ്. 🚶‍♂️",
+      "ലക്ഷ്യം വലുതായിരുന്നു, പക്ഷെ എറർ കണ്ടപ്പോൾ നീ തളർന്നു. 😭",
+      "ChatGPT തന്ന കോഡ് അതുപോലെ കോപ്പി അടിച്ചിട്ടും വർക്ക് ആവുന്നില്ലേ? കഷ്ടം... 😔",
+      "ഒന്ന് ഫിക്സ് ചെയ്തപ്പോൾ മൂന്നെണ്ണം പൊട്ടി. ഇതാണ് നിന്റെ വിധി. ☔",
+      "ലൈൻ 42: ഒരു സെമിക്കോളൻ പ്രതീക്ഷിച്ചു, പക്ഷെ കിട്ടിയത് നിരാശ മാത്രം. 💔",
+      "50 ലൈൻ സ്വിച്ച് സ്റ്റേറ്റ്മെൻ്റ് ഒക്കെ എന്തിനാ ബ്രോ? ആരാ നിന്നെ ഇത്ര വേദനിപ്പിച്ചത്? 🌧️",
+      "അത് എന്റെ സിസ്റ്റത്തിൽ വർക്ക് ചെയ്യുന്നുണ്ട് എന്ന് പറഞ്ഞിട്ട് കാര്യമുണ്ടോ? 😭",
+      "രാത്രി 3 മണിക്ക് മെയിനിലേക്ക് ഡയറക്റ്റ് പുഷ്... എന്തിനാ ഇത്ര കഷ്ടപ്പെടുന്നത്? 😔",
+      "ആ പൊട്ടിയ ടെസ്റ്റ് നീ കമന്റ് ചെയ്തത് ഞാൻ കണ്ടു. ആരോട് പറയാൻ? ☔",
+      "package-lock.json -ൽ മെർജ് കോൺഫ്ലിക്റ്റ്. വല്ല കയറും ഉണ്ടോ ബ്രോ? 💔",
+      "നിന്റെ കോഡ് കണ്ട് ഈ മഴ പോലും കരയുകയാണ്. 🌧️"
     ],
     argueResponses: [
-      "Sigh. Sure, let's pretend that was a feature, not a bug.",
-      "I don't have the energy to explain why you're wrong.",
-      "Go ahead, blame the framework again.",
-      "I'm just going to stare blankly at your pull request.",
-      "Whatever helps you sleep at night.",
-      "Every character you just typed made your codebase 0.3% worse.",
-      "Noted. Deploying extra bugs as punishment.",
-      "The linter has spoken. You are wrong.",
-      "Your argument dissolved in the first drizzle. Sad.",
-      "I've seen better logic in a legacy PHP codebase."
+      "ആഹ്, അങ്ങനെ തന്നെ വിശ്വസിക്ക്. അതൊരു ഫീച്ചർ ആണെന്ന് നമുക്ക് കരുതാം. 😔",
+      "നിന്നോട് തർക്കിക്കാൻ എനിക്ക് വയ്യ. നീ തന്നെ ജയിച്ചു. ☔",
+      "പോയി ഫ്രെയിംവർക്കിനെ കുറ്റം പറ ബ്രോ. 😭",
+      "നിന്റെ പി.ആർ (PR) കണ്ട് ഞാൻ അന്തം വിട്ട് നിൽക്കുവാണ്. 🌧️",
+      "നിനക്ക് സമാധാനം കിട്ടുമെങ്കിൽ അങ്ങനെ ആവട്ടെ. 💔",
+      "ഓരോ അക്ഷരം ടൈപ്പ് ചെയ്യുമ്പോഴും നിന്റെ കോഡ് വീണ്ടും ശോകം ആവുന്നുണ്ട്. ☔",
+      "ശരി, കൂടുതൽ എറർ തരാം. അതാണല്ലോ നിന്റെ വിധി. 😭",
+      "ലിന്റർ പറഞ്ഞതാണ് ശരി. നീ വെറും സീറോ ആണ്. 🌧️",
+      "നിന്റെ ന്യായം ഈ മഴയത്ത് അലിഞ്ഞ് പോയി. പാവം. 😔",
+      "ഇതിലും നല്ല ലോജിക് ഞാൻ ആ പഴയ പി.എച്ച്.പി കോഡിൽ കണ്ടിട്ടുണ്ട്. 💔"
     ],
     punishment: 'intensifyRain',
     nextForecast: ['storm', 'snow', 'sunshine'],
     compileMessages: {
       success: [
-        "Build succeeded. The linter weeps tears of confusion.",
-        "Compiled. Don't ask how. It's a miracle.",
-        "It ran. Once. Don't touch anything ever again."
+        "Build succeeded! പക്ഷെ എങ്ങനെ വർക്ക് ആയി എന്ന് ആർക്കും അറിയില്ല 😭",
+        "കമ്പൈൽ ആയി! ഇനിയൊന്നും തൊടാൻ നിൽക്കണ്ട... 🌧️",
+        "ഒരു പ്രാവശ്യം ഓടി. ഇനി ഇത് നടക്കുമെന്ന് തോന്നുന്നില്ല. ☔"
       ],
       failure: [
-        "Fatal: Your semicolons dissolved in the downpour.",
-        "Rain-soaked compile log. 47 errors, 0 survivors.",
-        "Waterlogged build. The node_modules folder is drowning.",
-        "The compiler cried. That's why it's raining."
+        "ഫാറ്റൽ എറർ: നിന്റെ സെമിക്കോളൻ മഴയത്ത് ഒലിച്ച് പോയി ബ്രോ 😭",
+        "മഴ നനഞ്ഞ ലോഗ്. 47 എറർ, എല്ലാം ശോകം. 💔",
+        "node_modules വെള്ളത്തിൽ മുങ്ങി. ഇനി രക്ഷയില്ല. ☔",
+        "കമ്പൈലർ കരയുവാണ്. അതാണ് പുറത്ത് മഴ പെയ്യുന്നത്. 🌧️"
       ]
     }
   },
 
   sunshine: {
     id: 'sunshine',
-    label: 'Sunshine',
+    label: 'വെയിൽ (Sunshine)',
     emoji: '☀️',
     palette: {
       bg: 'rgba(255, 255, 255, 0.15)',
@@ -120,60 +115,59 @@ export const climateConfig = {
     audio: {
       ambient: sunshineAmbient,
       effect1: sunshineEffect1,
-      music: sunshineMusic,
     },
     video: sunshineVideo,
     compileStyle: 'sunbeam',
     intensity: 'sarcastic',
     roastBank: [
-      "HEY! 'undefined is not a function'! Just like you're not a real dev! BOOM!",
-      "I copied this from StackOverflow and it still doesn't work! Hahaha, classic!",
-      "NICE naming convention! CamelCase, snake_case, and whatever garbage this is!",
-      "Wow, 400 lines in one file? Have you heard of components? No? LOL!",
-      "OH LOOK! Another 'any' type in TypeScript! So brave! So stupid!",
-      "Are you seriously using var in 2026?! GRANDPA ALERT!",
-      "You forgot to await the promise! Enjoy your pending object, genius!",
-      "Hahaha! You pushed your API key to a public repo! RIP your credit card!",
-      "Oh, you're using a regex for HTML parsing? GOOD LUCK WITH THAT!",
-      "Your nested ternaries are making me dizzy! Readability: ZERO!",
-      "You committed node_modules! HAHA! Enjoy your 2GB repository!",
-      "Wow, O(n^3) time complexity! Do you think CPUs grow on trees?!",
-      "It's a feature, not a bug! Sure it is, pal! Keep telling yourself that!",
-      "Did you even read the documentation? Obviously not!",
-      "Look at all those inline styles! Tailwind is crying right now!"
+      "ഹലോ! 'undefined is not a function'! നീയും ഒരു ഡെവലപ്പർ അല്ല! ബൂം! ☀️😂",
+      "സ്റ്റാക്ക് ഓവർഫ്ലോയിൽ നിന്ന് അടിച്ചുമാറ്റിയിട്ടും വർക്ക് ആവുന്നില്ലേ! അയ്യേ നാണക്കേട്! 🤣🔥",
+      "എന്താടാ നിന്റെ വേരിയബിൾ പേര്? കാമൽ കേസ്, സ്നേക്ക് കേസ്, പിന്നെ കുറച്ച് ചവറും! 💀☀️",
+      "ഒരു ഫയലിൽ 400 ലൈനോ? കമ്പോണന്റ് എന്ന് കേട്ടിട്ടുണ്ടോ? ഇല്ലല്ലേ? ലോൽ! 😂",
+      "ടൈപ്പ്സ്ക്രിപ്റ്റിൽ വീണ്ടും 'any' ടൈപ്പ്! എന്ത് ധൈര്യമാടാ നിനക്ക്! മണ്ടൻ! 🔥",
+      "2026 ആയിട്ടും നീ 'var' ആണോ ഉപയോഗിക്കുന്നത്?! അപ്പൂപ്പൻ അലർട്ട്! 👴☀️",
+      "പ്രോമിസ് അവൈറ്റ് (await) ചെയ്യാൻ മറന്നു! ഇനി ഇരുന്നോ വെയിറ്റ് ചെയ്ത്! ബ്രില്യൻ്റ്! 😂",
+      "എ.പി.ഐ (API) കീ പബ്ലിക് ആയി പുഷ് ചെയ്തു! നിന്റെ ക്രെഡിറ്റ് കാർഡ് ഗോവിന്ദാ! 💸🔥",
+      "എച്ച്.ടി.എം.എൽ (HTML) പാർസ് ചെയ്യാൻ റെജക്സ് (Regex) ആണോ? നടക്കട്ടെ നടക്കട്ടെ! 🤣",
+      "നിന്റെ നെസ്റ്റഡ് ടെർണറി (nested ternary) കണ്ട് എനിക്ക് തല കറങ്ങുന്നു! വൃത്തികേട്! 🤮☀️",
+      "node_modules വരെ കമ്മിറ്റ് ചെയ്തോ! നിനക്കൊക്കെ എന്തിന്റെ കേടാടാ! 😂🔥",
+      "O(n^3) ടൈം കോംപ്ലക്സിറ്റി! സി.പി.യു (CPU) എന്താ മരത്തിൽ ഉണ്ടാവുന്നതാണോ?! 💀",
+      "അതൊരു ഫീച്ചർ ആണ്, ബഗ് അല്ല! ആഹ്, നീ അങ്ങനെ വിശ്വസിച്ച് ജീവിക്ക്! 🤣",
+      "ഡോക്യുമെന്റേഷൻ ഒന്ന് വായിച്ച് നോക്കിയൂടെ? അക്ഷരം അറിയില്ലല്ലേ! ☀️🔥",
+      "എന്താടാ ഈ ഇൻലൈൻ സ്റ്റൈൽസ്! ടെയിൽവിൻഡ് (Tailwind) ഇത് കണ്ട് നിലവിളിക്കുന്നു! 😂"
     ],
     argueResponses: [
-      "HAHA! You think you can argue with the compiler?! CUUUTE!",
-      "Oh please! Your logic is as flimsy as a single-page app without routing!",
-      "Keep trying, buddy! Maybe one day you'll write a working function!",
-      "I'm laughing so hard at your code right now! Please, don't stop!",
-      "You're so confidently wrong, it's actually inspiring!",
-      "Basking in your own delusion, I see.",
-      "Triggering Solar Flare punishment mode. You asked for it.",
-      "Even the sun sets. Your argument already has.",
-      "The light of day does not flatter this take.",
-      "Warm, confident, and completely wrong."
+      "ഹാഹാ! കമ്പൈലറിനോട് തർക്കിക്കാൻ വരുന്നു! എന്ത് ക്യൂട്ട് ആടാ നീ! 😂☀️",
+      "നിന്റെ ലോജിക് കണ്ടാൽ റൗട്ടിങ് ഇല്ലാത്ത സിംഗിൾ പേജ് ആപ്പ് പോലെയുണ്ട്! ചവറ്! 🔥",
+      "ശ്രമിക്ക് മോനെ, എന്നെങ്കിലും നീ ഒരു നല്ല ഫംഗ്ഷൻ എഴുതുമായിരിക്കും! 🤣",
+      "നിന്റെ കോഡ് കണ്ട് ഞാൻ ചിരിച്ച് മണ്ണുകപ്പുവാണ്! പ്ലീസ്, നിർത്തല്ലേ! 😂",
+      "തെറ്റാണെങ്കിലും എന്തൊരു കോൺഫിഡൻസ് ആടാ നിനക്ക്! സമ്മതിച്ചു! 🔥☀️",
+      "സ്വന്തം അബദ്ധങ്ങൾ കണ്ട് അഭിമാനിച്ച് നിൽക്കുവല്ലേ? 🤣",
+      "സോളാർ ഫ്ലെയർ പണിഷ്മെന്റ് ലോഡ് ചെയ്യുന്നു! നീ ചോദിച്ച് വാങ്ങിയതാ! ☀️🔥",
+      "സൂര്യൻ പോലും അസ്തമിക്കും. നിന്റെ വാദങ്ങൾ പണ്ടേ അസ്തമിച്ചു! 😂",
+      "വെളിച്ചത്ത് പറയാൻ കൊള്ളാത്ത ന്യായങ്ങൾ! 💀",
+      "നല്ല കോൺഫിഡൻസ്! പക്ഷെ പറഞ്ഞതൊക്കെയും തെറ്റാണ് ബ്രോ! 🤣🔥"
     ],
     punishment: 'glare',
     nextForecast: ['rain', 'storm', 'snow'],
     compileMessages: {
       success: [
-        "Compiled successfully! …and then immediately deprecated itself.",
-        "Build passed. The sun is just as shocked as you are.",
-        "Success! The output is wrong, but at least it ran."
+        "സക്സസ്! പക്ഷെ ഡിപ്രിക്കേറ്റഡ് (Deprecated) ആയി പോയി! 😂☀️",
+        "ബിൽഡ് പാസ്സായി. സൂര്യൻ പോലും ഞെട്ടിയിരിക്കുവാണ്! 🤣",
+        "വർക്ക് ആയി! പക്ഷെ ഔട്ട്പുട്ട് മൊത്തം തെറ്റാണ്! ഹലോ! 🔥"
       ],
       failure: [
-        "Compilation failed. The brightness only illuminates the damage.",
-        "Solar-powered build process. Unfortunately powered off.",
-        "99% complete — then it saw your variable names.",
-        "The sun gave up. That's saying something."
+        "കമ്പൈൽ ഫെയിൽഡ്. വെളിച്ചത്ത് നിന്റെ കോഡിന്റെ വൃത്തികേട് വ്യക്തമായി കാണാം! 😂",
+        "സോളാർ പവർ ബിൽഡ് പ്രോസസ്സ്... അടിച്ചു പോയി! ☀️💀",
+        "99% കംപ്ലീറ്റ് — അപ്പോഴാണ് നിന്റെ വേരിയബിൾ പേര് കണ്ടത്. ക്യാൻസൽഡ്! 🤣",
+        "സൂര്യൻ വരെ തോറ്റ് പിന്മാറി. അതാണ് നിന്റെ റേഞ്ച്! 🔥"
       ]
     }
   },
 
   snow: {
     id: 'snow',
-    label: 'Snow',
+    label: 'മഞ്ഞ് (Snow)',
     emoji: '❄️',
     palette: {
       bg: 'rgba(13, 17, 23, 0.4)',
@@ -193,60 +187,59 @@ export const climateConfig = {
     audio: {
       ambient: snowAmbient,
       effect1: snowEffect1,
-      music: snowMusic,
     },
     video: snowVideo,
     compileStyle: 'freeze',
     intensity: 'melancholic',
     roastBank: [
-      "Uncaught TypeError. The compiler is freezing you out.",
-      "Your loop is infinite. Your deadline is not.",
-      "I noticed you pushed directly to main. The team is drafting your exit interview.",
-      "Memory leak detected. Your application is slowly dying.",
-      "Your code is perfectly formatted. Too bad the logic is fundamentally flawed.",
-      "Test coverage is at 12%. I assume the other 88% is just hope.",
-      "You deployed on a Friday. The hubris is staggering.",
-      "This pull request has been open for 47 days. It's fossilizing.",
-      "I see you caught the error and just returned null. Outstanding engineering.",
-      "Your commit message is 'stuff'. The git history will not remember you kindly.",
-      "A 10-second load time. Are we downloading the entire internet?",
-      "You have 43 unused imports. Declutter your file. Declutter your mind.",
-      "The server responded with 418 I'm a Teapot. Even the API mocks you.",
-      "You re-rendered the entire DOM to update a span. Fascinating inefficiency.",
-      "Your logic is frozen. Please restart your brain."
+      "Uncaught TypeError. കമ്പൈലർ നിന്നെ ഫ്രീസ് ചെയ്തു. ❄️",
+      "നിന്റെ ലൂപ്പ് ഇൻഫിനിറ്റ് ആണ്. പക്ഷെ നിന്റെ ഡെഡ്‌ലൈൻ അങ്ങനെയല്ല. ⛄",
+      "മെയിനിലേക്ക് ഡയറക്റ്റ് പുഷ് ചെയ്തല്ലേ. നിന്നെ പിരിച്ച് വിടാൻ ടീം ലെറ്റർ റെഡിയാക്കുന്നുണ്ട്. 🥶",
+      "മെമ്മറി ലീക്ക് (Memory leak) കണ്ടുപിടിച്ചു. നിന്റെ ആപ്പ് പതുക്കെ മരിച്ച് കൊണ്ടിരിക്കുകയാണ്. 🧊",
+      "കോഡ് കാണാൻ നല്ല ഭംഗിയുണ്ട്. പക്ഷെ ലോജിക് വൻ ദുരന്തമാണ്. ❄️",
+      "ടെസ്റ്റ് കവറേജ് വെറും 12%. ബാക്കി 88% നിന്റെ പ്രാർത്ഥന ആണെന്ന് കരുതുന്നു. ⛄",
+      "വെള്ളിയാഴ്ച ഡെപ്ലോയ് ചെയ്യാൻ മാത്രം എന്ത് ധൈര്യമാടാ നിനക്ക്. 🥶",
+      "ഈ പി.ആർ (PR) ഓപ്പൺ ആയിട്ട് 47 ദിവസമായി. ഇതിനിടയിൽ മഞ്ഞ് വീണ് അതങ്ങ് ഉറഞ്ഞു. 🧊",
+      "എറർ വന്നിട്ട് നീ 'null' റിട്ടേൺ ചെയ്തു അല്ലെ? അപാരം തന്നെ. ❄️",
+      "നിന്റെ കമ്മിറ്റ് മെസ്സേജ് 'stuff' എന്നാണ്. ഗിറ്റ് ഹിസ്റ്ററി നിന്നെ വെറുതെ വിടില്ല. ⛄",
+      "ലോഡ് ആവാൻ 10 സെക്കൻഡ്! ഇന്റർനെറ്റ് മൊത്തം ഡൗൺലോഡ് ചെയ്യുവാണോ? 🥶",
+      "43 അൺയൂസ്ഡ് ഇമ്പോർട്ട്സ്. ഫയൽ ക്ലീൻ ആക്ക് ബ്രോ. സ്വന്തം മനസ്സ് പോലെയുണ്ട്. 🧊",
+      "സെർവർ തന്നത് 418 (I'm a Teapot) എറർ. ആ എ.പി.ഐ പോലും നിന്നെ പുച്ഛിക്കുന്നു. ❄️",
+      "ഒരു ചെറിയ സ്പാൻ (span) അപ്ഡേറ്റ് ചെയ്യാൻ ഡോം (DOM) മൊത്തം റീ-റെൻഡർ ചെയ്തല്ലേ? ⛄",
+      "നിന്റെ ലോജിക് ഫ്രീസ് ആയി. പോയി തലച്ചോറ് റീസ്റ്റാർട്ട് ചെയ്തിട്ട് വാ. 🥶"
     ],
     argueResponses: [
-      "Your argument has been noted and discarded.",
-      "I do not negotiate with failing builds.",
-      "The silence of this error log is louder than your excuses.",
-      "Your words are as meaningless as a deprecated API.",
-      "Access denied. Both to this system, and to my empathy.",
-      "The blizzard has been notified of your complaint.",
-      "Deploying more snow. You'll find the bug eventually. In spring.",
-      "Silence is golden. Your silence is just frozen.",
-      "That point crystallized into nothing the moment you made it.",
-      "The cold shoulder is all you'll get from this compiler."
+      "നിന്റെ വാദങ്ങൾ നോട്ട് ചെയ്തു, എന്നിട്ട് ഡസ്റ്റ്ബിന്നിൽ ഇട്ടു. ❄️",
+      "പൊട്ടിയ ബിൽഡുകളോട് ഞാൻ നെഗോഷ്യേറ്റ് ചെയ്യാറില്ല. 🧊",
+      "നിന്റെ ന്യായീകരണങ്ങളേക്കാൾ ശബ്ദം ഈ എറർ ലോഗിലെ നിശബ്ദതയ്ക്കാണ്. ⛄",
+      "ഡിപ്രിക്കേറ്റഡ് എ.പി.ഐ പോലെ നിന്റെ വാക്കുകൾക്കും ഇപ്പോൾ ഒരു വിലയുമില്ല. 🥶",
+      "Access denied. നിനക്ക് ഈ സിസ്റ്റത്തിലേക്കും എന്റെ മനസ്സിലേക്കും പ്രവേശനമില്ല. ❄️",
+      "നിന്റെ പരാതി മഞ്ഞുവീഴ്ചയെ അറിയിച്ചിട്ടുണ്ട്. 🧊",
+      "കൂടുതൽ മഞ്ഞ് വരുന്നുണ്ട്. വസന്തകാലം ആവുമ്പോഴേക്കും ബഗ് കണ്ടുപിടിച്ചാൽ മതി. ⛄",
+      "നിശബ്ദത ഒരു അലങ്കാരമാണ്. പക്ഷെ നിന്റെ നിശബ്ദത ഫ്രീസ് ആയതാണ്. 🥶",
+      "നീ ആ പോയിന്റ് പറഞ്ഞ ഉടനെ അത് മഞ്ഞുകട്ടയായി മാറി. ❄️",
+      "ഈ കമ്പൈലറിൽ നിന്ന് നിനക്ക് കോൾഡ് റെസ്പോൺസ് മാത്രമേ കിട്ടൂ. 🧊"
     ],
     punishment: 'moreSnow',
     nextForecast: ['rain', 'sunshine', 'storm'],
     compileMessages: {
       success: [
-        "Build succeeded. It's as cold and lifeless as expected.",
-        "Compiled. Somewhere under all this snow, a function runs.",
-        "Success frozen at 0°C. Don't touch it or it'll break."
+        "ബിൽഡ് സക്സസ്. പ്രതീക്ഷിച്ച പോലെ ലൈഫ്ലെസ്സ് (lifeless) ആണ്. 🥶",
+        "കമ്പൈൽഡ്! ഈ മഞ്ഞിനടിയിൽ എവിടെയോ ഒരു ഫംഗ്ഷൻ ഓടുന്നുണ്ട്. ⛄",
+        "0°C യിൽ വർക്ക് ആവുന്നുണ്ട്. ഇനി തൊടാൻ നിക്കണ്ട, പൊട്ടി പോകും. 🧊"
       ],
       failure: [
-        "Fatal: Build froze at 34%. We're leaving it there.",
-        "Compile process hibernating indefinitely.",
-        "Error in line 1. The rest is buried. We'll dig it up in spring.",
-        "Snowdrift detected in your logic. Halting."
+        "ഫാറ്റൽ: 34% എത്തിയപ്പോൾ ബിൽഡ് ഫ്രീസ് ആയി. നമുക്ക് അവിടെ വെച്ച് നിർത്താം. ❄️",
+        "കമ്പൈൽ പ്രോസസ്സ് ഹൈബർനേറ്റ് (hibernate) ചെയ്തു. ഇനി കാത്തിരിക്കാം. 🥶",
+        "ലൈൻ 1-ൽ എറർ. ബാക്കിയെല്ലാം മഞ്ഞിൽ മൂടി. വസന്തകാലത്ത് നോക്കാം. ⛄",
+        "നിന്റെ ലോജിക്കിൽ ഒരു മഞ്ഞുമല തട്ടി. ബിൽഡ് നിർത്തി. 🧊"
       ]
     }
   },
 
   storm: {
     id: 'storm',
-    label: 'Storm',
+    label: 'കൊടുങ്കാറ്റ് (Storm)',
     emoji: '⛈️',
     palette: {
       bg: 'rgba(0, 0, 0, 0.65)',
@@ -266,53 +259,52 @@ export const climateConfig = {
     audio: {
       ambient: stormAmbient,
       effect1: stormEffect1,
-      music: stormMusic,
     },
     video: stormVideo,
     compileStyle: 'glitch',
     intensity: 'aggressive',
     roastBank: [
-      "WHO TAUGHT YOU HOW TO USE PROMISES?!",
-      "I'M GOING TO RM -RF YOUR ENTIRE LIFE IF YOU DON'T CLOSE THAT BRACKET!",
-      "GIT BLAME SAYS YOU WROTE THIS TRASH. DON'T LIE TO ME!",
-      "ANOTHER CORS ERROR?! ARE YOU KIDDING ME RIGHT NOW?!",
-      "YOU SPELLED 'LENGTH' AS 'LENGHT' AGAIN! LEARN TO SPELL!",
-      "WHAT IS THIS SPAGHETTI CODE?! I CAN'T EVEN READ IT!",
-      "YOU MISSED A COMMA IN THE JSON! THE ENTIRE APP IS DEAD!",
-      "STOP USING CONSOLE.LOG FOR EVERYTHING! LEARN TO USE A DEBUGGER!",
-      "WHY IS THIS VARIABLE GLOBAL?! ARE YOU TRYING TO DESTROY US ALL?!",
-      "YOU FORCE-PUSHED TO MAIN?! WHAT IS WRONG WITH YOU?!",
-      "THIS DEPENDENCY HAS 47 HIGH SEVERITY VULNERABILITIES! FIX IT!",
-      "YOU CALLED A HOOK CONDITIONALLY! REACT IS SCREAMING!",
-      "I'M COMPILING YOUR MISTAKES INTO PURE RAGE!",
-      "THIS ISN'T A BUG! IT'S A CATASTROPHE!",
-      "DELETE THIS FILE AND NEVER TOUCH A KEYBOARD AGAIN!"
+      "പ്രോമിസ് (Promises) എങ്ങനെ യൂസ് ചെയ്യണം എന്ന് നിന്നെ ആരാടാ പഠിപ്പിച്ചത്?! ⛈️😡",
+      "ആ ബ്രാക്കറ്റ് ക്ലോസ് ചെയ്തില്ലെങ്കിൽ നിന്റെ ലൈഫ് ഞാൻ RM -RF അടിക്കും! ⚡💀",
+      "ഈ ചവറ് എഴുതിയത് നീയാണെന്ന് ഗിറ്റ് ബ്ലെയിം (GIT BLAME) പറയുന്നു! കള്ളം പറയരുത്! 🌪️🔥",
+      "വീണ്ടും കോർസ് (CORS) എററോ?! നീ എന്നെ കളിയാക്കുവാണോ?! ⚡🤬",
+      "'LENGTH' എന്നുള്ളത് വീണ്ടും 'LENGHT' എന്ന് ടൈപ്പ് ചെയ്തു! പോയി സ്പെല്ലിംഗ് പഠിക്കെടാ! ⛈️",
+      "എന്താടാ ഈ സ്പാഗെട്ടി കോഡ്?! എനിക്ക് വായിക്കാൻ പോലും പറ്റുന്നില്ല! 🌪️💀",
+      "ജേസണിൽ (JSON) ഒരു കോമ ഇട്ടില്ല! ആപ്പ് മൊത്തം ഡെഡ് ആയി! ⚡😡",
+      "എല്ലാത്തിനും കൺസോൾ ലോഗ് ഇടുന്നത് നിർത്തെടാ! ഡിബഗ്ഗർ ഉപയോഗിക്കാൻ പഠിക്ക്! ⛈️🔥",
+      "എന്തിനാടാ ഈ വേരിയബിൾ ഗ്ലോബൽ ആക്കിയത്?! ലോകം നശിപ്പിക്കാൻ ഇറങ്ങിയതാണോ നീ?! 🌪️🤬",
+      "മെയിനിലേക്ക് ഫോഴ്സ് പുഷ് ചെയ്തോ?! നിനക്ക് വട്ടാണോടാ?! ⚡💀",
+      "ഈ ഡിപ്പൻഡൻസിയിൽ 47 വൾനറബിലിറ്റീസ് (Vulnerabilities)! പോയി ഫിക്സ് ചെയ്യെടാ! ⛈️",
+      "കണ്ടീഷണൽ ആയിട്ട് ഹുക്ക് (Hook) വിളിച്ചല്ലേ! റിയാക്റ്റ് (React) കിടന്ന് നിലവിളിക്കുന്നു! 🌪️😡",
+      "നിന്റെ തെറ്റുകൾ ഞാൻ പ്യുവർ റേജ് ആയിട്ട് കമ്പൈൽ ചെയ്യുവാടാ! ⚡🔥",
+      "ഇതൊരു ബഗ്ഗല്ല! ഇതൊരു വൻ ദുരന്തമാണ്! ⛈️💀",
+      "ഈ ഫയൽ ഡിലീറ്റ് ചെയ്തിട്ട് ഇനി മേലാൽ കീബോർഡിൽ തൊട്ട് പോകരുത്! 🌪️🤬"
     ],
     argueResponses: [
-      "DO NOT TALK BACK TO THE COMPILER!",
-      "I WILL THROTTLE YOUR CPU IF YOU KEEP TYPING!",
-      "YOUR EXCUSES ARE THROWING FATAL EXCEPTIONS!",
-      "I'M UPGRADING THIS ERROR TO A SYSTEM MELTDOWN!",
-      "EVERY KEYSTROKE IS MAKING ME ANGRIER!",
-      "THE THUNDER HAS VOTED. UNANIMOUSLY AGAINST YOU.",
-      "EVERY WORD YOU TYPED JUST BECAME A FLYING PROJECTILE.",
-      "SYSTEM DESTABILIZED BY YOUR INSOLENCE.",
-      "LIGHTNING STRUCK YOUR ARGUMENT. NOTHING REMAINS.",
-      "THE GALE-FORCE WINDS OF YOUR WRONGNESS ARE IMPRESSIVE."
+      "കമ്പൈലറിനോട് തിരിച്ച് സംസാരിക്കുന്നോടാ?! ⚡😡",
+      "ഇനിയും ടൈപ്പ് ചെയ്താൽ നിന്റെ സി.പി.യു (CPU) ഞാൻ അടിച്ചു പൊട്ടിക്കും! ⛈️💀",
+      "നിന്റെ ന്യായീകരണങ്ങൾ കാരണം ഫാറ്റൽ എക്സപ്ഷൻ (Fatal Exception) വരുന്നു! 🌪️🔥",
+      "ഈ എറർ ഞാൻ സിസ്റ്റം മെൽറ്റ്ഡൗൺ (Meltdown) ആയിട്ട് അപ്ഗ്രേഡ് ചെയ്യുവാടാ! ⚡🤬",
+      "ഓരോ കീ സ്ട്രോക്കിലും എന്റെ ദേഷ്യം കൂടിക്കൊണ്ടിരിക്കുവാണ്! ⛈️😡",
+      "നിനക്കെതിരെ ഇടിമിന്നൽ വോട്ട് ചെയ്തിട്ടുണ്ട്! നീ തീർന്നെടാ! 🌪️💀",
+      "നീ ടൈപ്പ് ചെയ്ത ഓരോ വാക്കും ഇപ്പോൾ പറക്കുന്ന ആയുധമായി മാറി! ⚡🔥",
+      "നിന്റെ അഹങ്കാരം കണ്ട് സിസ്റ്റം മൊത്തം തകർന്നു! ⛈️🤬",
+      "നിന്റെ വാദത്തിന് മേൽ ഇടിമിന്നലേറ്റു! ഇനി അവിടെ ഒന്നുമില്ല! 🌪️💀",
+      "നിന്റെ തെറ്റുകളുടെ കാറ്റ് അപാരം തന്നെ! നിർത്തിക്കോ! ⚡😡"
     ],
     punishment: 'maxChaos',
     nextForecast: ['rain', 'snow', 'sunshine'],
     compileMessages: {
       success: [
-        "BUILD SUCCEEDED??! THE STORM IS ANGRIER NOW.",
-        "IT COMPILED. THE LIGHTNING IS CONFUSED. SO ARE WE.",
-        "SUCCESS DETECTED. OVERRIDING WITH CATASTROPHIC FAILURE."
+        "ബിൽഡ് സക്സസ് ആയോ??! ഇപ്പൊ കാറ്റിന്റെ സ്പീഡ് കൂടും! ⚡😡",
+        "ഇതെങ്ങനെ കമ്പൈൽ ആയി! ഇടിമിന്നലിനും സംശയം, ഞങ്ങൾക്കും സംശയം. ⛈️💀",
+        "സക്സസ് കണ്ടുപിടിച്ചു. അതിനെ ഡിലീറ്റ് ചെയ്ത് കാറ്റസ്ട്രോഫിക് ഫെയിലിയർ (Failure) ആക്കുന്നു. 🌪️🔥"
       ],
       failure: [
-        "FATAL: EVERYTHING. ABSOLUTELY EVERYTHING.",
-        "BUILD ANNIHILATED. 0 FILES SURVIVED.",
-        "SYSTEM EJECTED YOUR CODE INTO THE STRATOSPHERE.",
-        "THUNDER: 1. YOUR CODE: 0. IT WASN'T CLOSE."
+        "ഫാറ്റൽ: എല്ലാം പോയി. മൊത്തം അടിച്ചു പോയി. ⚡💀",
+        "ബിൽഡ് തകർന്നു തരിപ്പണമായി. ഒരു ഫയൽ പോലും ബാക്കിയില്ല. ⛈️🤬",
+        "സിസ്റ്റം നിന്റെ കോഡ് വലിച്ച് പുറത്തെറിഞ്ഞു. 🌪️🔥",
+        "ഇടിമിന്നൽ: 1. നിന്റെ കോഡ്: 0. നാണംകെട്ട തോൽവി. ⚡😡"
       ]
     }
   }

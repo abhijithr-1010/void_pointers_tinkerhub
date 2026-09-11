@@ -5,12 +5,12 @@ import { climateConfig } from '../systems/climateConfig.js';
 export default function ArgueBox({ climate, onPunishment, onLogInsult }) {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
-    { from: 'editor', text: `${climate.emoji} Go ahead. Argue with me. I dare you.` }
+    { from: 'editor', text: `${climate.emoji} ഒന്ന് തർക്കിച്ചു നോക്ക്... നോക്കട്ടെ.` }
   ]);
   const bottomRef = useRef(null);
 
   React.useEffect(() => {
-    setMessages([{ from: 'editor', text: `${climate.emoji} Climate changed. Your arguments remain invalid.` }]);
+    setMessages([{ from: 'editor', text: `${climate.emoji} ക്ലൈമറ്റ് മാറി. പക്ഷെ നിന്റെ കോഡ് ഇപ്പോഴും ശോകമാണ്.` }]);
   }, [climate.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSubmit = (e) => {
@@ -27,14 +27,14 @@ export default function ArgueBox({ climate, onPunishment, onLogInsult }) {
   };
 
   return (
-    <div className="rounded-lg border flex flex-col backdrop-blur-md shadow-lg"
+    <div className="rounded-lg border flex flex-col backdrop-blur-md shadow-lg font-sans"
       style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border, color: climate.palette.text, height: '200px' }}>
-      <div className="px-3 py-1.5 border-b text-xs font-mono font-semibold opacity-80" style={{ borderColor: climate.palette.border }}>
-        💬 Argue with the compiler (you will lose)
+      <div className="px-3 py-1.5 border-b text-xs font-sans font-semibold opacity-80" style={{ borderColor: climate.palette.border }}>
+        💬 കമ്പൈലറിനോട് തർക്കിക്കാം (തോൽവി ഉറപ്പ്)
       </div>
       <div className="flex-1 overflow-y-auto px-3 py-2 flex flex-col gap-1.5">
         {messages.map((msg, i) => (
-          <div key={i} className={`text-xs font-mono px-2 py-1 rounded max-w-[90%] ${msg.from === 'user' ? 'self-end' : 'self-start'}`}
+          <div key={i} className={`text-xs font-sans px-2 py-1 rounded max-w-[90%] ${msg.from === 'user' ? 'self-end' : 'self-start'}`}
             style={{ backgroundColor: msg.from === 'user' ? climate.palette.buttonBg : climate.palette.editorBg, color: msg.from === 'user' ? climate.palette.text : climate.palette.accent, borderLeft: msg.from === 'editor' ? `3px solid ${climate.palette.accent}` : 'none' }}>
             {msg.text}
           </div>
@@ -43,11 +43,11 @@ export default function ArgueBox({ climate, onPunishment, onLogInsult }) {
       </div>
       <form onSubmit={handleSubmit} className="flex items-center border-t gap-2 px-3 py-2" style={{ borderColor: climate.palette.border }}>
         <input type="text" value={input} onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your futile argument..."
-          className="flex-1 bg-transparent outline-none text-xs font-mono" style={{ color: climate.palette.text }} />
-        <button type="submit" className="text-xs font-mono px-2 py-1 rounded border transition-all"
+          placeholder="വെറുതെ ഒന്ന് തർക്കിച്ചു നോക്ക്..."
+          className="flex-1 bg-transparent outline-none text-xs font-sans" style={{ color: climate.palette.text }} />
+        <button type="submit" className="text-xs font-sans px-2 py-1 rounded border transition-all"
           style={{ backgroundColor: climate.palette.accent, color: climate.palette.bg, borderColor: climate.palette.accent }}>
-          Send
+          പറയാനുള്ളത് പറ (Send)
         </button>
       </form>
     </div>
