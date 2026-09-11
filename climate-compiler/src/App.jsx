@@ -32,6 +32,7 @@ export default function App() {
   const [currentRoast, setCurrentRoast] = useState('');
   const [compileResult, setCompileResult] = useState(null);
   const [insultHistory, setInsultHistory] = useState([]);
+  const [runPopup, setRunPopup] = useState(null);
 
   const climate = climateConfig[climateId];
   const { intensity, recordKeystroke } = useTypingTracker(climateId);
@@ -92,6 +93,12 @@ export default function App() {
     setCompileResult(result);
     setCurrentRoast(result.message);
     logInsult({ message: result.message, climateId, source: 'compile' });
+    
+    // Trigger run popup with a fresh roast from the bank
+    const popupRoast = getRoast(climateId, 1);
+    setRunPopup(popupRoast);
+    setTimeout(() => setRunPopup(null), 6000); // Auto-dismiss after 6s
+    
     setTimeout(() => setCompileResult(null), 10000);
   }, [climateId, logInsult]);
 
@@ -162,6 +169,31 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* Run Popup Overlay */}
+      {runPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-fade-in p-4">
+          <div className="rounded-xl border p-6 flex flex-col gap-4 shadow-2xl max-w-md w-full animate-slide-in relative overflow-hidden"
+               style={{ backgroundColor: climate.palette.panelBg, borderColor: climate.palette.border }}>
+            <div className="flex justify-between items-center border-b pb-2" style={{ borderColor: climate.palette.border }}>
+              <span className="font-bold text-lg font-sans tracking-wide" style={{ color: climate.palette.accent, textShadow: `0 0 8px ${climate.palette.glowColor}` }}>
+                {climate.emoji} BUILD OUTPUT
+              </span>
+              <button onClick={() => setRunPopup(null)} className="opacity-60 hover:opacity-100 font-mono text-2xl leading-none" style={{ color: climate.palette.text }}>
+                ×
+              </button>
+            </div>
+            <div className="font-mono text-sm leading-relaxed italic border-l-4 pl-3" style={{ color: climate.palette.text, borderColor: climate.palette.accent }}>
+              "{runPopup}"
+            </div>
+            <button onClick={() => setRunPopup(null)}
+               className="mt-2 py-2 rounded-md font-sans font-bold uppercase text-sm border transition-all hover:scale-[1.02] active:scale-95"
+               style={{ backgroundColor: climate.palette.buttonBg, borderColor: climate.palette.accent, color: climate.palette.accent, boxShadow: `0 0 12px ${climate.palette.glowColor}` }}>
+              Acknowledge Failure
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

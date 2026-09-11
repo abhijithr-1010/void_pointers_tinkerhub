@@ -20,14 +20,24 @@ const AudioManager = forwardRef(function AudioManager({ climate, muted, musicEna
 
   useEffect(() => {
     if (ambientRef.current) {
+      ambientRef.current.pause();
+      ambientRef.current.currentTime = 0;
       ambientRef.current.load();
       ambientRef.current.muted = muted;
       ambientRef.current.play().catch(() => {});
     }
     if (musicRef.current) {
+      musicRef.current.pause();
+      musicRef.current.currentTime = 0;
       musicRef.current.load();
       musicRef.current.muted = muted || !musicEnabled;
       if (musicEnabled && !muted) musicRef.current.play().catch(() => {});
+    }
+    const fx = document.getElementById('audio-effect1');
+    if (fx) {
+      fx.pause();
+      fx.currentTime = 0;
+      fx.load();
     }
   }, [climate.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
