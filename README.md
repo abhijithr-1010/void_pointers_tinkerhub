@@ -1,4 +1,4 @@
-<img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
+<img width="1280" height="640" alt="Climate Compiler" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
 # Climate Compiler ⚡🌧️☀️❄️⛈️ 🎯
 
@@ -45,16 +45,23 @@ npm run dev
 For Software:
 
 # Screenshots (Add at least 3)
-{{ ... }}
+![Screenshot1](Add screenshot 1 here with proper name)
+*Storm Mode: The editor aggressively throwing water splashes and characters flying off the screen due to high wind, featuring intense Malayalam troll-insults.*
+
+![Screenshot2](Add screenshot 2 here with proper name)
+*Sunshine Mode: High contrast editor with drifting golden sand particles, featuring a confident compile bar that betrays you at 99%.*
+
+![Screenshot3](Add screenshot 3 here with proper name)
+*Snow Mode: A freezing editor with accumulating snow and sluggish typing physics, displaying cold, detached Malayalam insults.*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+*Workflow diagram illustrating how the live weather data is fetched and mapped to our four distinct climate moods to trigger corresponding UI components and audio.*
 
 ### Project Demo
 # Video
 [Add your demo video link here]
-*Explain what the video demonstrates*
+*This video demonstrates the full workflow of the Climate Compiler. It showcases the dynamic transition between different weather states, the unique particle animations (snow, sand, water splashes), the interactive fake compile sequences, and the Malayalam meme-troll audio/visual feedback as the editor actively works against the developer.*
 
 # Additional Demos
 [Add any extra demo materials/links]
@@ -68,6 +75,3 @@ Made with ❤️ at TinkerHub Useless Projects
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
-
-
-{{ ... }}
