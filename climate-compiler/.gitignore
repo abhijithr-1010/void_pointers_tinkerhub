@@ -21,3 +21,6 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+
+# Media assets (drop files locally, too large for git)
+src/assets/
