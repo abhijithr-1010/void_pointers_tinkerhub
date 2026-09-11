@@ -6,7 +6,7 @@
 
 ### Team Members
 - Team Lead: Abhijith R - Sahrdaya College of Engineering and Technology
-- Member: Aeijin Jaison - Sahrdaya College of Engineering and Technology
+- Member 2: Aeijin Jaison - Sahrdaya College of Engineering and Technology
 
 ### Project Description
 A theatrical, single-page fake code editor where the **weather controls everything** —
